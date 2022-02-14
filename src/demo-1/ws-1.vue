@@ -1,13 +1,13 @@
 <script setup>
 import { ref } from "vue";
-import TextField from "./TextField.vue";
-import SignUp1 from "./SignUp1.vue";
-import SignUp2 from "./SignUp2.vue";
-import SignUp3 from "./SignUp3.vue";
-import SignUp4 from "./SignUp4.vue";
-import SignUp4Gen from "./SignUp4Gen.vue";
-import SignUp1Gen from "./SignUp1Gen.vue";
-import UserAddress from "./UserAddress.vue";
+import TextField from "./components/TextField.vue";
+import SignUp1 from "./forms/SignUp1.vue";
+import SignUp2 from "./forms/SignUp2.vue";
+import SignUp3 from "./forms/SignUp3.vue";
+import SignUp4 from "./forms/SignUp4.vue";
+import SignUp4Gen from "./forms/SignUp4Gen.vue";
+import SignUp1Gen from "./forms/SignUp1Gen.vue";
+import UserAddress from "./components/UserAddress.vue";
 
 // this is feeling closer to the 2nd or 3rd step --- not the first
 // thats ok for now
@@ -57,10 +57,11 @@ function update(model, value) {
       </li>
       <li>Last Name: {{ formData.lastName }}</li>
     </ul>
-
+    -
     <div class="box">
       <SignUp1Gen />
     </div>
+    <!--
     <div class="box">
       <SignUp4Gen />
     </div>
@@ -69,7 +70,7 @@ function update(model, value) {
         v-model="formData.userAddress"
       />
       {{ formData }}
-    </div>
+    </div>-->
     <!--<SignUp4Gen />-->
     <!--<SignUp1Gen />-->
   </div>

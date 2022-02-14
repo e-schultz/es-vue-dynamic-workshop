@@ -48,5 +48,27 @@ const activeTab = Comment;
     <div class="box">
       <component :is="activeTab" />
     </div>
+    <div class="box">
+      Alternative Soltuions
+      <nav class="breadcrumb">
+        <ul>
+          <li>
+            <RouterLink to="/ex-1-sol-comp"
+              >Computed Prop</RouterLink
+            >
+          </li>
+          <li>
+            <RouterLink to="/ex-1-sol-map"
+              >Object Map</RouterLink
+            >
+          </li>
+          <li>
+            <RouterLink to="/about"
+              >using markRaw</RouterLink
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </template>

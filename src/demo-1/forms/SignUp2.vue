@@ -1,8 +1,8 @@
 <script setup>
-import { reactive } from "vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
-const formData = reactive({});
+import { ref } from "vue";
+import TextField from "../components/TextField.vue";
+import SelectList from "../components/SelectList.vue";
+const formData = ref({});
 </script>
 <template>
   <div>
@@ -20,16 +20,16 @@ const formData = reactive({});
           placeholder="Please Enter
     Your Last Name"
         />
-        <TextField v-model="formData.email" label="Work Email" placeholder="email" />
+        <TextField v-model="formData.email" label="Business Email" placeholder="email" />
         <TextField
           v-model="formData.companyName"
           label="Company Name"
           placeholder="Company Name"
         />
         <SelectList
-          label="Industry"
-          :options="['Industry 1', 'Industry 2', 'Industry 3', 'Other']"
-          v-model="formData.industry"
+          label="Job Title"
+          :options="['Developer', 'Manager', 'Other']"
+          v-model="formData.jobTitle"
         />
       </fieldset>
     </form>

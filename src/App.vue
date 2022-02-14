@@ -29,6 +29,30 @@ import {
         </li>
       </ul>
     </nav>
+    <nav class="breadcrumb">
+      <ul>
+        <li>
+          <RouterLink to="/ex-1"
+            >Exercise 1</RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink to="/ex-2"
+            >Exercise 2</RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink to="/demo-0"
+            >Demo</RouterLink
+          >
+        </li>
+        <li>
+          <RouterLink to="/demo-1"
+            >Demo 1</RouterLink
+          >
+        </li>
+      </ul>
+    </nav>
   </header>
   <div class="section">
     <div class="container">

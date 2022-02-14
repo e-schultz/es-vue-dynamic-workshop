@@ -1,5 +1,10 @@
 <script setup>
-import { ref, computed, watch, reactive } from "vue";
+import {
+  ref,
+  computed,
+  watch,
+  reactive,
+} from "vue";
 const props = defineProps(["modelValue"]);
 const emit = defineEmits(["update:modelValue"]);
 import TextField from "./TextField.vue";
@@ -44,12 +49,27 @@ watch(addressForm.value, (form) => {
 </script>
 <template>
   <div>
-    <TextField label="Address 1" v-model="addressForm.address1" />
-    <TextField label="Address 2" v-model="addressForm.address2" />
+    <TextField
+      label="Address 1"
+      v-model="addressForm.address1"
+    />
+    <TextField
+      label="Address 2"
+      v-model="addressForm.address2"
+    />
     <div class="flex">
-      <TextField label="Country" v-model="addressForm.country" />
-      <TextField label="City" v-model="addressForm.city" />
-      <TextField label="Prov" v-model="addressForm.prov" />
+      <TextField
+        label="Country"
+        v-model="addressForm.country"
+      />
+      <TextField
+        label="City"
+        v-model="addressForm.city"
+      />
+      <TextField
+        label="Prov"
+        v-model="addressForm.prov"
+      />
     </div>
   </div>
 </template>

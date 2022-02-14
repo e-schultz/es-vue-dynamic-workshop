@@ -6,18 +6,28 @@ import SelectList from "./SelectList.vue";
 import CheckBox from "./CheckBox.vue";
 
 const formData = ref({});
-const components = { TextField, SelectList, CheckBox };
+const components = {
+  TextField,
+  SelectList,
+  CheckBox,
+};
 
 const schema = [
   {
     component: "TextField",
     model: "firstName",
-    props: { label: "First Name", placeholder: "Please Enter Your First name" },
+    props: {
+      label: "First Name",
+      placeholder: "Please Enter Your First name",
+    },
   },
   {
     component: "TextField",
     model: "lastName",
-    props: { label: "Last Name", placeholder: "Please Enter Your Last name" },
+    props: {
+      label: "Last Name",
+      placeholder: "Please Enter Your Last name",
+    },
   },
 
   {
@@ -37,7 +47,10 @@ const schema = [
   {
     component: "TextField",
     model: "email",
-    props: { label: "Email", placeholder: "work email" },
+    props: {
+      label: "Email",
+      placeholder: "work email",
+    },
     condition: (e) => e.usingFor === "Work",
   },
   {
@@ -45,7 +58,12 @@ const schema = [
     model: "industry",
     props: {
       label: "Industry",
-      options: ["Industry 1", "Industry 2", "Industry 3", "Other"],
+      options: [
+        "Industry 1",
+        "Industry 2",
+        "Industry 3",
+        "Other",
+      ],
     },
     condition: (e) => e.usingFor === "Work",
   },
@@ -58,6 +76,7 @@ const schema = [
   },
 ];
 let handleUpdate = (field, value) => {
+  console.log("what", field, value);
   formData.value[field] = value;
 };
 </script>
@@ -67,16 +86,18 @@ let handleUpdate = (field, value) => {
       <fieldset>
         <legend>Signup 4 Details</legend>
 
-        <!--<template v-for="(field, index) in schema">
-          <component
-            :is="components[field.component]"
-            v-model="formData[field.model]"
-            v-bind="field.props"
-          />
-        </template>-->
-        <FormGen :schema="schema" @update:formValue="handleUpdate" />
+        <FormGen
+          :schema="schema"
+          @update:formValue="handleUpdate"
+          @update:modalValue="handleUpdate"
+        />
+      </fieldset>
+    </form>
+    {{ formData }}
+  </div>
+</template>
 
-        <!-- <TextField
+<!-- <TextField
           v-model="formData.firstName"
           label="First Name"
           placeholder="Please Enter Your First Name"
@@ -111,8 +132,10 @@ let handleUpdate = (field, value) => {
           v-model="formData.industry"
           v-if="formData.usingFor === 'Work'"
         />-->
-      </fieldset>
-    </form>
-    {{ formData }}
-  </div>
-</template>
+<!--<template v-for="(field, index) in schema">
+          <component
+            :is="components[field.component]"
+            v-model="formData[field.model]"
+            v-bind="field.props"
+          />
+        </template>-->

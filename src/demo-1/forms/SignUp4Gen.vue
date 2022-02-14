@@ -1,25 +1,35 @@
 <script setup>
 import { reactive, ref } from "vue";
-import useDynamicForm from "./useDynamicForm.js";
-import FormGen from "./FormGen.vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
-import CheckBox from "./CheckBox.vue";
+import useDynamicForm from "../useDynamicForm.js";
+import FormGen from "../FormGen.vue";
+import TextField from "../components/TextField.vue";
+import SelectList from "../components/SelectList.vue";
+import CheckBox from "../components/CheckBox.vue";
 
 const formData = ref({});
 useDynamicForm(formData);
-const components = { TextField, SelectList, CheckBox };
+const components = {
+  TextField,
+  SelectList,
+  CheckBox,
+};
 
 const schema = [
   {
     component: "TextField",
     model: "firstName",
-    props: { label: "First Name", placeholder: "Please Enter Your First name" },
+    props: {
+      label: "First Name",
+      placeholder: "Please Enter Your First name",
+    },
   },
   {
     component: "TextField",
     model: "lastName",
-    props: { label: "Last Name", placeholder: "Please Enter Your Last name" },
+    props: {
+      label: "Last Name",
+      placeholder: "Please Enter Your Last name",
+    },
   },
   {
     component: "RadioGroup",
@@ -46,7 +56,10 @@ const schema = [
   {
     component: "TextField",
     model: "email",
-    props: { label: "Email", placeholder: "work email" },
+    props: {
+      label: "Email",
+      placeholder: "work email",
+    },
     condition: (e) => e.usingFor === "Work",
   },
   {
@@ -54,7 +67,12 @@ const schema = [
     model: "industry",
     props: {
       label: "Industry",
-      options: ["Industry 1", "Industry 2", "Industry 3", "Other"],
+      options: [
+        "Industry 1",
+        "Industry 2",
+        "Industry 3",
+        "Other",
+      ],
     },
     condition: (e) => e.usingFor === "Work",
   },
@@ -92,7 +110,10 @@ let handleUpdate = (field, value) => {
     <form>
       <fieldset>
         <legend>Signup 4 Details</legend>
-        <FormGen :schema="schema" @update:modelValue="handleUpdateModel" />
+        <FormGen
+          :schema="schema"
+          @update:modelValue="handleUpdateModel"
+        />
       </fieldset>
     </form>
     {{ formData }}

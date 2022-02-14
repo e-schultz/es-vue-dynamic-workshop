@@ -17,13 +17,13 @@
         />-->
 <script setup>
 import { reactive, ref } from "vue";
-import useDynamicForm from "./useDynamicForm.js";
-import FormGen from "./FormGen.vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
-import CheckBox from "./CheckBox.vue";
-import RadioGroup from "./RadioGroup.vue";
-import UserAddress from "./UserAddress.vue";
+import useDynamicForm from "../useDynamicForm.js";
+import FormGen from "../FormGen.vue";
+import TextField from "../components/TextField.vue";
+import SelectList from "../components/SelectList.vue";
+import CheckBox from "../components/CheckBox.vue";
+import RadioGroup from "../components/RadioGroup.vue";
+import UserAddress from "../components/UserAddress.vue";
 
 const componentMap = {
   TextField,
@@ -38,12 +38,21 @@ function handleSubmit(x, y) {
   console.log("submit", { x, y });
   console.log(x.target.value);
 }
-const createTextField = (model, label, placeholder = label) => ({
+const createTextField = (
+  model,
+  label,
+  placeholder = label
+) => ({
   component: "TextField",
   model,
   props: { label, placeholder },
 });
-const createRadioGroup = (model, label, options, placeholder = label) => ({
+const createRadioGroup = (
+  model,
+  label,
+  options,
+  placeholder = label
+) => ({
   component: "RadioGroup",
   model,
   props: {
@@ -56,12 +65,16 @@ const SCHEMA = [
   createTextField("firstName", "First Name"),
   createTextField("lastName", "Last Name"),
   createTextField("jobTitle", "Job Title"),
-  createRadioGroup("hasVue", "Has Vue", ["yes", "no"]),
+  createRadioGroup("hasVue", "Has Vue", [
+    "yes",
+    "no",
+  ]),
   {
     component: "UserAddress",
     model: "userAddress",
   },
 ];
+console.log({ schema: SCHEMA });
 </script>
 <template>
   <div>

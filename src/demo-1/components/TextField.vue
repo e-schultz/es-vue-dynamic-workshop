@@ -1,5 +1,6 @@
 <script setup>
-defineProps(["label"]);
+defineProps(["label", "modelValue"]);
+defineEmits(["update:modelValue"]);
 </script>
 <template>
   <div class="field">
@@ -10,6 +11,13 @@ defineProps(["label"]);
         autocomplete="disabled"
         class="input"
         v-bind="$attrs"
+        :value="modelValue"
+        @input="
+          $emit(
+            'update:modelValue',
+            $event.target.value
+          )
+        "
       />
     </div>
   </div>

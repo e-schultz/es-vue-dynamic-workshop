@@ -1,8 +1,8 @@
 <script setup>
 import { reactive } from "vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
-import RadioGroup from "./RadioGroup.vue";
+import TextField from "../components/TextField.vue";
+import SelectList from "../components/SelectList.vue";
+import RadioGroup from "../components/RadioGroup.vue";
 const formData = reactive({});
 function handleSubmit(x, y) {
   console.log("submit", { x, y });
@@ -27,7 +27,10 @@ function handleSubmit(x, y) {
     Your Last Name"
           />
         </div>
-        <TextField label="Job Title" v-model="formData.jobTitle" />
+        <TextField
+          label="Job Title"
+          v-model="formData.jobTitle"
+        />
         <RadioGroup
           label="Vue Expierience?"
           :options="['yes', 'no']"

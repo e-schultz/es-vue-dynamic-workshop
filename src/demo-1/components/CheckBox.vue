@@ -8,7 +8,7 @@ defineEmits(["update:modelValue"]);
       <label class="checkbox">
         <input
           type="checkbox"
-          :checked="modalValue"
+          :checked="modelValue"
           @input="
             $emit(
               'update:modelValue',
@@ -16,7 +16,7 @@ defineEmits(["update:modelValue"]);
             )
           "
         />
-        {{ label }}
+        {{ label }} --
       </label>
     </div>
   </div>

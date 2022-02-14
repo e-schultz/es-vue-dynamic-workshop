@@ -16,7 +16,7 @@ defineEmits(["update:modelValue"]);
             )
           "
         />
-        {{ label }}
+        {{ label }} --
       </label>
     </div>
   </div>

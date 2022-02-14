@@ -3,7 +3,6 @@ import { ref, computed } from "vue";
 import Login from "./Login.vue";
 import Comment from "./Comment.vue";
 import MiscFields from "./MiscFields.vue";
-
 const activeTab = Comment;
 </script>
 

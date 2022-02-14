@@ -42,6 +42,14 @@ const router = createRouter({
       component: () => import('../exercises/ex-1/ex-1.vue')
     },
     {
+      path: '/ex-2',
+      name: 'ex-2',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../exercises/ex-2/ex-2.vue')
+    },
+    {
       path: '/ex-1-sol-comp',
       name: 'ex-1-sol-comp',
       // route level code-splitting

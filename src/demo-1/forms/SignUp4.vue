@@ -1,12 +1,21 @@
 <script setup>
 import { reactive, ref } from "vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
+import TextField from "../components/TextField.vue";
+import SelectList from "../components/SelectList.vue";
 const formData = ref({});
 function clearFields() {
-  let { firstName, lastName, usingFor, ...rest } = formData.value;
+  let {
+    firstName,
+    lastName,
+    usingFor,
+    ...rest
+  } = formData.value;
 
-  formData.value = { firstName, lastName, usingFor };
+  formData.value = {
+    firstName,
+    lastName,
+    usingFor,
+  };
 }
 </script>
 <template>
@@ -45,7 +54,12 @@ function clearFields() {
         />
         <SelectList
           label="Industry"
-          :options="['Industry 1', 'Industry 2', 'Industry 3', 'Other']"
+          :options="[
+            'Industry 1',
+            'Industry 2',
+            'Industry 3',
+            'Other',
+          ]"
           v-model="formData.industry"
           v-if="formData.usingFor === 'Work'"
         />

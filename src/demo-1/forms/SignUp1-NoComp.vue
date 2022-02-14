@@ -1,8 +1,8 @@
 <script setup>
 import { reactive, ref } from "vue";
-import TextField from "./TextField.vue";
-import SelectList from "./SelectList.vue";
-import RadioGroup from "./RadioGroup.vue";
+import TextField from "./components/TextField.vue";
+import SelectList from "./components/SelectList.vue";
+import RadioGroup from "./components/RadioGroup.vue";
 const formData = ref({});
 </script>
 <template>
@@ -46,9 +46,19 @@ const formData = ref({});
         </label>
         <label>
           Has Vue Expierence?
-          <input type="radio" id="one" value="Yes" v-model="formData.hasVue" />
+          <input
+            type="radio"
+            id="one"
+            value="Yes"
+            v-model="formData.hasVue"
+          />
           <label>Yes</label>
-          <input type="radio" id="two" value="No" v-model="formData.hasVue" />
+          <input
+            type="radio"
+            id="two"
+            value="No"
+            v-model="formData.hasVue"
+          />
           <label>No</label>
         </label>
         <br />
