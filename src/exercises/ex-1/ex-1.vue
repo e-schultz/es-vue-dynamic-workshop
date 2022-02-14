@@ -46,6 +46,11 @@ const activeTab = Comment;
       </ul>
     </div>
     <div class="box">
+      Update this component so that selecting a
+      tab will display the correct
+      <component class=""></component>
+    </div>
+    <div class="box">
       <component :is="activeTab" />
     </div>
     <div class="box">
