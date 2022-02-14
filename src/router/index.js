@@ -64,6 +64,22 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../exercises/ex-1/ex-1-solutions/ex-1-mark-raw/ex-1.vue')
+    },
+    {
+      path: '/demo-0',
+      name: 'demo-0',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../demo-0/ws-0.vue')
+    },
+    {
+      path: '/demo-1',
+      name: 'demo-1',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../demo-1/ws-1.vue')
     }
   ]
 })
