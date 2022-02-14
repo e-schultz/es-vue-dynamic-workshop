@@ -1,15 +1,19 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, markRaw } from "vue";
 import Login from "./Login.vue";
 import Comment from "./Comment.vue";
 import MiscFields from "./MiscFields.vue";
-
-const activeTab = Comment;
+markRaw(Login);
+markRaw(Comment);
+markRaw(MiscFields);
+const activeTab = ref(Comment);
 </script>
 
 <template>
   <div class="box">
-    <h1>Component :is Tab Example - start</h1>
+    <h1>
+      Component :is Tab Example - end - mark raw
+    </h1>
     <h2>
       {{ activeTab }}
     </h2>
@@ -18,20 +22,19 @@ const activeTab = Comment;
     <div class="tabs is-centered">
       <ul>
         <li>
-          <a @click.prevent="activeTab = 'Login'"
+          <a @click.prevent="activeTab = Login"
             >Login</a
           >
         </li>
         <li>
-          <a
-            @click.prevent="activeTab = 'Comment'"
+          <a @click.prevent="activeTab = Comment"
             >Comment</a
           >
         </li>
         <li>
           <a
             @click.prevent="
-              activeTab = 'MiscFields'
+              activeTab = MiscFields
             "
             >Misc Fields</a
           >
@@ -43,6 +46,3 @@ const activeTab = Comment;
     </div>
   </div>
 </template>
-<style>
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
-</style>
