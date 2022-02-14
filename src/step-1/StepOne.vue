@@ -5,7 +5,9 @@ import MessageForm from "./MessageForm.vue";
 const showUser = ref(true);
 
 const showWhich = computed(() => {
-  return showUser.value === true ? UserForm : MessageForm;
+  return showUser.value === true
+    ? UserForm
+    : MessageForm;
 });
 /*
 
@@ -28,16 +30,29 @@ const userDetails = ref({
       </header>
       <div class="control">
         <label class="radio">
-          <input type="radio" name="showWhich" :value="true" v-model="showUser" />
+          <input
+            type="radio"
+            name="showWhich"
+            :value="true"
+            v-model="showUser"
+          />
           Display User
         </label>
         <label class="radio">
-          <input type="radio" name="showWhich" :value="false" v-model="showUser" />
+          <input
+            type="radio"
+            name="showWhich"
+            :value="false"
+            v-model="showUser"
+          />
           Display Message
         </label>
       </div>
       <div class="box">
-        <component :is="showWhich" v-bind="userDetails" />
+        <component
+          :is="showWhich"
+          v-bind="userDetails"
+        />
       </div>
       <!--<component :is="showWhich" />-->
       <!--  <div class="box">
