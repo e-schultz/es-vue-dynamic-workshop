@@ -32,6 +32,38 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/SampleHeadless.vue')
+    },
+    {
+      path: '/ex-1',
+      name: 'ex-1',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../exercises/ex-1/ex-1.vue')
+    },
+    {
+      path: '/ex-1-sol-comp',
+      name: 'ex-1-sol-comp',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../exercises/ex-1/ex-1-solutions/ex-1-computed/ex-1.vue')
+    },
+    {
+      path: '/ex-1-sol-map',
+      name: 'ex-1-sol-map',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../exercises/ex-1/ex-1-solutions/ex-1-map/ex-1.vue')
+    },
+    {
+      path: '/ex-1-sol-mark',
+      name: 'ex-1-sol-mark',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../exercises/ex-1/ex-1-solutions/ex-1-mark-raw/ex-1.vue')
     }
   ]
 })
